@@ -4,7 +4,7 @@
 </div>
 <br>
 
-<table id="table_article" class="table table-bordered table-striped table-hover">
+<table id="table_article" class="table table-bordered table-striped table-hover" style="width: 100%" width="100%">
 	<thead>
 		<tr>
 			<th class="nosort">S#</th>

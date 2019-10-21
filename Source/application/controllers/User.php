@@ -2,11 +2,11 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Article extends CI_Controller {
+class User extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
-        $this->load->model('article_model', 'model_article');
+        $this->load->model('user_model', 'model_user');
         $this->template->set_layout('admin');
     }
 
@@ -16,29 +16,33 @@ class Article extends CI_Controller {
      */
     public function index() {
         
-        $this->template->title('Article');
-        $this->template->build('article/list');
+        $this->template->title('Users');
+        $this->template->build('user/list');
     }
 
     public function ajax_list() {
         $sno = 1;
         $data = [];
 
-        $list = $this->model_article->get_datatables(); // get data
-        $records_total = $this->model_article->count_all();
-        $records_filtered = $this->model_article->count_filtered();
+        $list = $this->model_user->get_datatables(); // get data
+        $records_total = $this->model_user->count_all();
+        $records_filtered = $this->model_user->count_filtered();
 
-        $list_data = $list['result'];
+        $list_data = $list['result']; 
         if ($list_data) {
             foreach ($list_data as $list) {
                 $row = [];
                 $row[] = $sno++;
-                $row[] = $list->menu_name;
-                $row[] = $list->article_title;
-                $row[] = $list->article_status;
-                $action = '<a class="btn btn-info btn-sm" title="View" href="' . base_url() . 'article/view/' . $list->article_id . '"><span class="glyphicon glyphicon-eye-open"></span></a> &nbsp;';
-                $action .= '<a class="btn btn-warning btn-sm" title="Update" href="' . base_url() . 'article/update/' . $list->article_id . '"><span class="glyphicon glyphicon-pencil"></span></a>';
-
+                $row[] = $list->user_name;
+                $row[] = $list->user_role;
+                if($list->fw_status == 'Active'){
+                    $fw_action = '<button class="btn btn-info btn-warning btn_fw" title="View" data-action="fw_remove" data-userid="'.$list->user_id.'">Remove Featured Writer</button> &nbsp;';
+                }else{
+                    $fw_action = '<button class="btn btn-info btn-sm btn_fw" title="View" data-action="fw_add" data-userid="'.$list->user_id.'">Featured Writer</button> &nbsp;';
+                }
+                
+                $action = $fw_action;
+                
                 $row[] = $action;
                 $data[] = $row;
             }
@@ -54,54 +58,61 @@ class Article extends CI_Controller {
 
         echo json_encode($result);
     }
-
+    
     /**
-     * Description 	: 
-     * Parameter 	:
-     * */
-    /* public function create()
-      {
-      $this->template->title('Article - Create');
-      $this->template->build('article/create');
-      } */
-
-    public function create() {
-        $this->template->title('Article - Create'); // PAGE TITLE
-        // FORM VALIDATION
-        $this->form_validation->set_rules("category", "Category", "trim|required", ['required' => 'Category is required']);
-        $this->form_validation->set_rules("title", "Title", "trim|required", ['required' => 'Title is required']);
-        $this->form_validation->set_rules("content", "Content", "trim|required", ['required' => 'Content is required']);
-        // FILL SELECTED FORM VALUES AFTER FORM VALIDATION 
-        $option_categories = '<option value="">Select Category</option>';
-
-        if ($this->form_validation->run() == TRUE) {
-            if ($this->input->post()) {
-                // CONSTRUCT INSERT DATA
-                $data = array(
-                    'article_category' => (int) $this->input->post('category'),
-                    'article_title' => $this->input->post('title'),
-                    'article_content' => $this->input->post('content'),
-                    'article_author' => 1, //$this->input->post('name'),
-                    'article_created_on' => date('Y-m-d H:i:s') //mysql_date_and_time()
-                );
-                $result = $this->model_article->insert($data); // INSERT MODEL 
-                if ($result) {
-                    $this->session->set_flashdata('success', 'Article has been created successfully');
-                    redirect('/');
-                } else {
-                    $this->session->set_flashdata('error', 'Article could not be created. Please try again');
+     * Description : Add a new Featured Writer
+     * **/
+    public function featured_writer(){
+        $usre_id = $this->input->post('user_id');
+        $action = $this->input->post('action');
+        $get_fw = $this->model_user->get_fw_by_userid($usre_id);
+        
+        if($action == 'fw_remove'){
+            if($get_fw){
+                $status = $get_fw->status;
+                if($status == 'Active'){
+                    // Update Status
+                    $update_data =  [
+                                    'status'=>'Deleted',
+                                    'modified_on' => date('Y-m-d H:i:s')
+                                ];
+                    $result = $this->model_user->fw_update($get_fw->fw_id, $update_data);
+                }else{
+                    $result = TRUE;
                 }
+            }else{
+                $result = TRUE;
             }
-        } else {  // UPDATE FORM FIELD VALUES WHEN FORM VALIDATION FAILS
-            $selected_category = set_value('category');
-
-            if ($selected_category) {
-                $option_categories = $this->_dropdown_categories($selected_category);
+        }else{
+            if($get_fw){
+            
+                $status = $get_fw->status;
+                if($status == 'Deleted'){
+                    // Update Status
+                    $update_data =  [
+                                    'status'=>'Active',
+                                    'modified_on' => date('Y-m-d H:i:s')
+                                ];
+                    $result = $this->model_user->fw_update($get_fw->fw_id, $update_data);
+                }else{
+                    $result = TRUE;
+                }
+            }  else {
+                // Insert
+                $insert_data =  [
+                                    'user_id'=>$usre_id,
+                                    'status'=>'Active',
+                                    'created_on' => date('Y-m-d H:i:s')
+                                ];
+                $result = $this->model_user->fw_add($insert_data);
             }
         }
-        $data['categories'] = $this->_dropdown_categories($selected_category);
-
-        $this->template->build('article/create', $data);
+        
+        
+        
+        $return_data = ['msg'=>'Feature writer has been added successfully'];
+        
+        echo json_encode($return_data);
     }
 
     public function update($article_id) {

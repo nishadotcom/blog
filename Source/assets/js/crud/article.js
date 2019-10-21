@@ -5,7 +5,7 @@
  $(document).ready(function(){
 	
 	table = $('#table_article').DataTable({
-		// dom: 'ltip',
+		dom: 'ltip',
 		orderCellsTop: true,
 		serverSide: true,
 		processing: true,
@@ -33,8 +33,8 @@
         ]
 	});
 	
-	$('.editor').summernote({
+	/*$('.editor').summernote({
 		height: 250
-	});
+	});*/
 	
  });
