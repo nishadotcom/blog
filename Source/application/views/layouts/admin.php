@@ -37,6 +37,7 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/slick-theme.css">
 
         <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/datatable/datatables.min.css"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/summernote.css">
 
     </head>
     <body>
@@ -82,14 +83,19 @@
                             </li>
 
                             <li class="nav-item dropdown <?php echo ($this->uri->segment(1) == 'category') ? 'active' : ''; ?>">
-                                <a class="nav-link " href="<?php echo base_url().'category'; ?>" >
+                                <a class="nav-link " href="<?php echo base_url() . 'category'; ?>" >
                                     <i class="fa fa-cubes" aria-hidden="true"></i><span>Category</span>
                                 </a>
                             </li>
 
                             <li class="nav-item <?php echo ($this->uri->segment(1) == 'article') ? 'active' : ''; ?>">
-                                <a class="nav-link" href="<?php echo base_url().'article'; ?>">
+                                <a class="nav-link" href="<?php echo base_url() . 'article'; ?>">
                                     <i class="fa fa-cubes" aria-hidden="true"></i><span>Article</span>
+                                </a>
+                            </li>
+                            <li class="nav-item <?php echo ($this->uri->segment(1) == 'user') ? 'active' : ''; ?>">
+                                <a class="nav-link" href="<?php echo base_url() . 'user'; ?>">
+                                    <i class="fa fa-cubes" aria-hidden="true"></i><span>User</span>
                                 </a>
                             </li>
                             <!--<li class="nav-item ml-auto">
@@ -105,7 +111,7 @@
             </nav>
             <!-- Navbar End -->
         </header>
-        
+
         <section class="featured-section-padding featured-sec">
             <div class="container">
                 <div class="row">
@@ -116,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 p-0 p-md-1">
@@ -125,7 +131,7 @@
                 </div>
             </div>
         </section>
-        
+
 
         <!-- Copyright Section End -->
 
@@ -144,16 +150,16 @@
         <script src="<?php echo base_url(); ?>assets/js/jquery-min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/popper.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-        
-        
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/config.js"></script>
-<script type = "text/javascript" src = "<?php echo base_url(); ?>assets/js/datatable/datatables.min.js" ></script>
-<script type="text/javascript" src="<?php echo base_url(); ?>assets/js/datatable/dataTables.bootstrap.min.js"></script>
 
-<?php
-echo ($route == strtolower('article')) ? '<script type="text/javascript" src="' . base_url() . 'assets/js/crud/article.js"></script>' : '';
-echo ($route == strtolower('category')) ? '<script type="text/javascript" src="' . base_url() . 'assets/js/crud/category.js"></script>' : '';
-echo ($route == strtolower('user')) ? '<script type="text/javascript" src="' . base_url() . 'assets/js/crud/user.js"></script>' : '';
-?>
-</body>
+
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/config.js"></script>
+        <script type="text/javascript" src = "<?php echo base_url(); ?>assets/js/datatable/datatables.min.js" ></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/datatable/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/summernote.js"></script>
+        <?php
+        echo ($route == strtolower('article')) ? '<script type="text/javascript" src="' . base_url() . 'assets/js/crud/article.js"></script>' : '';
+        echo ($route == strtolower('category')) ? '<script type="text/javascript" src="' . base_url() . 'assets/js/crud/category.js"></script>' : '';
+        echo ($route == strtolower('user')) ? '<script type="text/javascript" src="' . base_url() . 'assets/js/crud/user.js"></script>' : '';
+        ?>
+    </body>
 </html>

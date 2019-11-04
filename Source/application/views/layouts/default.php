@@ -167,7 +167,7 @@
               </li>
 			   <li class="nav-item ml-auto">
                 		<button class="btn btn-primary pull-right contribute-btn"
-onClick="window.open('http://localhost/oznif/contribute.html','contribute')"
+onClick="window.open('<?php echo base_url().'article'; ?>','contribute')"
 						 type="button">
   <i class="fa fa-info-circle" aria-hidden="true"></i>
   Contribute

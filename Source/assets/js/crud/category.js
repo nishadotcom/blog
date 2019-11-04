@@ -5,7 +5,7 @@
  $(document).ready(function(){
 	 
 	table = $('#table_category').DataTable({
-		// dom: 'ltip',
+		dom: 'ltip',
 		orderCellsTop: true,
 		serverSide: true,
 		processing: true,

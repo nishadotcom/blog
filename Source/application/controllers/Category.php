@@ -7,6 +7,7 @@ class Category extends CI_Controller {
 	{
         parent::__construct();
         $this->load->model('category_model', 'model_category');
+        $this->template->set_layout('admin');
     }
 	
 	/**

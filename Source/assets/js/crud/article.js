@@ -33,8 +33,8 @@
         ]
 	});
 	
-	/*$('.editor').summernote({
+	$('.editor').summernote({
 		height: 250
-	});*/
+	});
 	
  });
