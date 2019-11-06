@@ -34,4 +34,22 @@
 <div class="col-md-10 col-md-offset-6">
 	<a type="button" class="btn btn-default" href="<?php echo base_url().'article'; ?>">Back</a>
 	<a type="button" class="btn btn-warning" href="<?php echo base_url().'article/update/'.$article_data['article_id']; ?>">Update</a>
+        <?php 
+        if($article_data['article_status'] == 'Waiting For Approval'){
+            ?>
+            <a type="button" class="btn btn-info" href="<?php echo base_url().'article/admin_approve/'.$article_data['article_id']; ?>">Approve</a>
+            <?php
+        }
+        
+        if($article_data['fw_status'] == 'Active'){
+            ?>
+            <button type="button" class="btn btn-primary btn_fw" data-action="fw_remove" data-userid="<?php echo $article_data['article_author']; ?>">Remove Featured Writer</button>
+            <?php
+        }else {
+            ?>
+            <button type="button" class="btn btn-primary btn_fw" data-action="fw_add" data-userid="<?php echo $article_data['article_author']; ?>">Feature Writer</button>
+            <?php
+        }
+        ?>
+        
 </div>

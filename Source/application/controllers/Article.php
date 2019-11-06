@@ -159,6 +159,23 @@ class Article extends CI_Controller {
 
         $this->template->build('article/view', $data);
     }
+    
+    public function admin_approve($article_id){
+        $update_data = ['article_status' => 'Published'];
+        
+        $result = $this->model_article->update($article_id, $update_data); // INSERT MODEL 
+        if ($result) {
+            $this->session->set_flashdata('success', 'Article has been validated successfully');
+            redirect('article');
+        } else {
+            $this->session->set_flashdata('error', 'Article could not be validated. Please try again');
+            redirect('article/update/'.$article_id);
+        }
+    }
+    
+    public function feature_writer(){
+        
+    }
 
     private function _dropdown_categories($selected = FALSE) {
         $categories = $this->model_article->get_catgories();

@@ -36,5 +36,19 @@
 	$('.editor').summernote({
 		height: 250
 	});
+        
+        $('.btn_fw').click(function(){
+        //$('#table_user').on('click', ".btn_fw", function(){ 
+            var action = $(this).attr('data-action');
+            var user_id = $(this).attr('data-userid');
+            $.ajax({
+                method: 'POST',
+                url: base_url+'user/featured_writer',
+                data: {'user_id': user_id, 'action': action},
+                success: function(result){
+                    location.reload(true);
+                }
+            });
+        });
 	
  });

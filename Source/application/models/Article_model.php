@@ -9,6 +9,7 @@ class Article_model extends CI_Model
 	var $table_article 	= 'article';
 	var $table_category	= 'menu';
 	var $table_user		= 'user';
+        var $table_feature_writer = 'featured_writer';
 	var $column_order 	= array('article_title'); //set column field database for datatable orderable
     var $column_search 	= array('article_title'); //set column field database for datatable searchable just firstname , lastname , address are searchable
     var $order 			= array('article_created_on' => 'DESC'); // default order 
@@ -42,9 +43,10 @@ class Article_model extends CI_Model
     {
 		$i = 0;
 		
-		$this->db->select("article_id, article_category, article_title, article_content, article_status, article_author, menu_name");
+		$this->db->select("article_id, article_category, article_title, article_content, article_status, article_author, menu_name, ".$this->table_feature_writer.".status AS fw_status");
 		$this->db->from($this->table_article);
 		$this->db->join($this->table_category, 'article_category = menu_id', 'left');
+                $this->db->join($this->table_feature_writer, 'article_author = user_id', 'left');
 		$this->db->where('article_status <> "Deleted"');
 		
 		foreach ($this->column_search as $item) // loop column 
@@ -126,10 +128,11 @@ class Article_model extends CI_Model
 	
 	public function get_article_by_id($article_id)
 	{
-		$this->db->select('article_id, article_category, article_title, article_content, article_status, article_author, menu_name, menu_id, article_created_on, article_updated_on, user_name');
+		$this->db->select('article_id, article_category, article_title, article_content, article_status, article_author, menu_name, menu_id, article_created_on, article_updated_on, user_name, '.$this->table_feature_writer.'.status AS fw_status');
 		$this->db->from($this->table_article);
 		$this->db->join($this->table_category, 'article_category = menu_id', 'left');
-		$this->db->join($this->table_user, 'article_author = user_id', 'left');
+		$this->db->join($this->table_user, 'article_author = '.$this->table_user.'.user_id', 'left');
+                $this->db->join($this->table_feature_writer, 'article_author = '.$this->table_feature_writer.'.user_id', 'left');
 		$this->db->where('article_id', $article_id);
 		
 		return $this->db->get()->row_array();
