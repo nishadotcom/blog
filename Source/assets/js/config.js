@@ -2,4 +2,4 @@
  * Description	:
  * Modified On	:
  */
-var base_url = 'http://localhost/blog/Source/';
+var base_url = 'http://www.talozo.com/blog/Source/';

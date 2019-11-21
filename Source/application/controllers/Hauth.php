@@ -30,9 +30,10 @@ class HAuth extends CI_Controller {
             if ($this->hybridauthlib->providerEnabled($provider)) {
                 log_message('debug', "controllers.HAuth.login: service $provider enabled, trying to authenticate.");
                 $service = $this->hybridauthlib->authenticate($provider);
-                if ($service->isUserConnected()) {
-                    log_message('debug', 'controller.HAuth.login: user authenticated.');
-                    $user_profile = $service->getUserProfile();
+                
+                if ($service->isUserConnected()) { 
+                    log_message('debug', 'controller.HAuth.login: user authenticated.'); echo '<pre>'; print_r($service); exit;
+                    $user_profile = $service->getUserProfile(); 
                     log_message('info', 'controllers.HAuth.login: user profile:' . PHP_EOL . print_r($user_profile, TRUE));
                     $data['user_profile'] = $user_profile;
                     $this->load->view('hauth/done', $data);

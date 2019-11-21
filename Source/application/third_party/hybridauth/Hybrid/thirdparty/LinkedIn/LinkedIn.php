@@ -93,7 +93,7 @@ class LinkedIn {
   const _API_OAUTH_VERSION           = '1.0';
 
   // the default response format from LinkedIn
-  const _DEFAULT_RESPONSE_FORMAT     = 'xml';
+  const _DEFAULT_RESPONSE_FORMAT     = 'JSON';
 
   // helper constants used to standardize LinkedIn <-> API communication.  See demo page for usage.
   const _GET_RESPONSE                = 'lResponse';
@@ -121,12 +121,13 @@ class LinkedIn {
   const _SHARE_CONTENT_DESC_LENGTH   = 400;
 
   // LinkedIn API end-points
-	const _URL_ACCESS                  = 'https://api.linkedin.com/uas/oauth/accessToken';
-	const _URL_API                     = 'https://api.linkedin.com';
-	const _URL_AUTH                    = 'https://www.linkedin.com/uas/oauth/authenticate?oauth_token=';
-	const _URL_REQUEST                 = 'https://api.linkedin.com/uas/oauth/requestToken';
-	// const _URL_REQUEST                 = 'https://api.linkedin.com/uas/oauth/requestToken?scope=r_basicprofile+r_emailaddress+rw_nus+r_network';
-	const _URL_REVOKE                  = 'https://api.linkedin.com/uas/oauth/invalidateToken';
+	const _URL_ACCESS                  = 'https://api.linkedin.com/uas/oauth/accessToken'; 
+	const _URL_API                     = 'https://api.linkedin.com'; 
+	const _URL_AUTH                    = 'https://www.linkedin.com/uas/oauth/authenticate?oauth_token='; 
+	//const _URL_REQUEST               = 'https://api.linkedin.com/uas/oauth/requestToken'; 
+	//const _URL_REQUEST               = 'https://api.linkedin.com/uas/oauth/requestToken?scope=r_basicprofile+r_emailaddress+rw_nus+r_network';
+	const _URL_REQUEST                 = 'https://api.linkedin.com/uas/oauth/requestToken?scope=r_basicprofile+r_emailaddress+r_network';
+	const _URL_REVOKE                  = 'https://api.linkedin.com/uas/oauth/invalidateToken'; 
 
 	// Library version
 	const _VERSION                     = '3.2.0';
@@ -175,7 +176,7 @@ class LinkedIn {
    * Explicitly clears LinkedIn object from memory upon destruction.
 	 */
   public function __destruct() {
-    unset($this);
+    //unset($this);
 	}
 
 	/**
