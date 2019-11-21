@@ -1167,9 +1167,13 @@
         <!-- End Preloader -->
         <style>
             .google {
-  background-color: #dd4b39;
-  color: white;
-}
+                background-color: #dd4b39;
+                color: white;
+            }
+            .linkedin {
+                background-color: #0e76a8;
+                color: white;
+            }
         </style>
         <!-- Login Modal -->
         <div class="modal fade" id="modal_login" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
@@ -1190,8 +1194,8 @@
                                     <i class="fa fa-google fa-fw"></i> Login with Google+
                                 </a>
                                 <hr>
-                                <a href="#" class="google btn">
-                                    <i class="fa fa-google fa-fw"></i> Login with Google+
+                                <a href="#" class="linkedin btn">
+                                    <i class="fa fa-linkedin fa-fw"></i> Login with LinkedIn
                                 </a>
                             </div>
                             
