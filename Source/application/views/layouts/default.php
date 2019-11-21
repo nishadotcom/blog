@@ -46,7 +46,7 @@
                 <div class="row">
                     <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-6 p-2">
                         <div class="text-center">
-                            <a href="http://localhost/oznif/"><img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-fluid"></a>
+                            <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/img/logo.png" class="img-fluid"></a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-sm-6 col-lg-6 col-xl-6 p-2">
