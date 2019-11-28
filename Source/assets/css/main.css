@@ -2,7 +2,6 @@
 html {
   overflow-x: hidden;
 }
-
 body {
   background: #fff;
   font-size: 14px;
@@ -23,7 +22,7 @@ h1, h2, h3, h4 {
   font-size: 20px;
   color: #222222;
   font-weight: 700;
-   font-family: 'Mansalva', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 a {
@@ -73,7 +72,7 @@ a:not([href]):not([tabindex]) {
 }
 
 .section-title {
-	font-family: 'Mansalva', cursive;
+	font-family: 'Fira Sans', sans-serif;
     font-size: 19px;
     color: #222222;
     /* display: inline-block; */
@@ -83,7 +82,7 @@ a:not([href]):not([tabindex]) {
 	    margin: 0px 0px 10px 0px;
 }
 .trending-topic .section-title {
-	font-family: 'Mansalva', cursive;
+	font-family: 'Fira Sans', sans-serif;
     font-size: 19px;
     color: #222222;
     /* display: inline-block; */
@@ -863,7 +862,7 @@ hr {
 }
 .single-content p{
 	line-height:20px;
-	color:#fff;
+	color:#243665;
 	    margin: 5px 0px 0px 0px;
 }
 .shot-item .single-content .fancy-table .table-cell {
@@ -889,7 +888,7 @@ hr {
 }
 
 .shot-item .single-content a {
-  color: #fff;
+  color: #243665;
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 400;
@@ -1903,6 +1902,8 @@ textarea {
 	height: 100%;
   width: 100%;
 	border-radius:5px;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
 
 /* Style the back side */
@@ -1926,7 +1927,10 @@ textarea {
 .flip-box-back h2{
     margin-top: 15px;
     font-size: 18px;
-    color: #fff;
+    color: #000;
+}
+.flip-box-back p{
+    color: #000;
 }
 ./* flipbox-1 */
 .flip-box-back1 {
@@ -1939,7 +1943,7 @@ textarea {
 
 
 .flip-box-back1 {
-  background-color: #348af7;
+  background-color: #e4e4e4;
   color: white;
       padding: 20% 5%;
   height: 269px;
@@ -1950,7 +1954,11 @@ textarea {
 .flip-box-back1 h2{
     margin-top: 15px;
     font-size: 18px;
-    color: #fff;
+    color: #243665;
+}
+.flip-box-back1 p{
+
+    color: #243665;
 }
 ./* flipbox-2 */
 .flip-box-back2 {
@@ -1962,18 +1970,22 @@ textarea {
 }
 
 .flip-box-back2 {
-  background-color: #a301b6;
+  background-color: #e4e4e4;
   color: white;
       padding: 20% 5%;
   height: 269px;
   clear:both; 
   border-radius:5px;
 }
+.flip-box-back2 p{
+color: #243665;
+}
 
 .flip-box-back2 h2{
     margin-top: 15px;
     font-size: 18px;
-    color: #fff;
+    color: #243665;
+    font-family: roboto, sans-serif;
 }
 ./* flipbox-3 */
 .flip-box-back3 {
@@ -1985,7 +1997,7 @@ textarea {
 }
 
 .flip-box-back3 {
-  background-color: #da552a;
+  background-color: #e4e4e4;
   color: white;
       padding: 20% 5%;
   height: 269px;
@@ -1996,7 +2008,10 @@ textarea {
 .flip-box-back3 h2{
     margin-top: 15px;
     font-size: 18px;
-    color: #fff;
+    color: #243665;
+}
+.flip-box-back3 p{
+    color: #243665;
 }
 ./* flipbox-4 */
 .flip-box-back4 {
@@ -2008,7 +2023,7 @@ textarea {
 }
 
 .flip-box-back4 {
-  background-color: #613bc6;
+  background-color: #e4e4e4;
   color: white;
       padding: 20% 5%;
   height: 269px;
@@ -2019,7 +2034,11 @@ textarea {
 .flip-box-back4 h2{
     margin-top: 15px;
     font-size: 18px;
-    color: #fff;
+    color: #243665;
+}
+.flip-box-back4 p{
+
+    color: #243665;
 }
 /* Flip box ends */
 .clear-fix {
@@ -2085,28 +2104,39 @@ textarea {
 	margin-top:15px;
 }
 .orange-bg {
-	background:#ec4b23 !important;
+	background:#e4e4e4 !important;
 }
 .red-bg {
-	background:#b21a41 !important;
+	background:#e4e4e4 !important;
 }
 .blue-bg {
-	background:#2d89f0 !important;
+	background:#e4e4e4 !important;
 	
 }
 .green-bg {
-	background:#008d00 !important;
+	background:#e4e4e4 !important;
 }
 .violet-bg {
 	
-	background:#a900a2 !important;
+	background:#e4e4e4 !important;
 }
 .contribute-btn {
 	color: #fff;
-    background-color: #ff8d00;
-    border-color: #7f90a0 ;
+    background-color: #8BD8BD;
+    border-color: #8BD8BD ;
 	border:0px ;
 	    font-size: 13px;
+    padding: 5px 16px;
+}
+.contribute-btn img {
+        width:30px;
+        height:30px;
+            margin: 0px 12px 0px -5px;
+       }
+.contribute-btn:hover {
+  color: #000;
+    background-color: #e2e2e2;
+    border-color: #e2e2e2;
 }
 .active .contribute-btn {
 	color: #fff;
@@ -2115,43 +2145,43 @@ textarea {
 	
 }
 .blue-bg {
-background:#2c87ee;
+background:#e4e4e4;
 }
 .greenlight-bg {
-background:#6ab51d;
+background:#e4e4e4;
 }
 .orange-bg {
-background:#d34827;
+background:#e4e4e4;
 }
 .violet-bg{
-background:#603cba;
+background:#e4e4e4;
 }
 .orange-bg2 {
-background:#da542d;
+background:#e4e4e4;
 }
 .dark-red{
-background:#bb1d48;
+background:#e4e4e4;
 }
 .light-violet-bg{
-background:#5f3bba;
+background:#e4e4e4;
 }
 .blue-light-bg {
-background:#1e7983;
+background:#e4e4e4;
 }
 .blue-light-bg2 {
-background:#2e8bef;
+background:#e4e4e4;
 }
 .violetbg2 {
-background:#ba1d48;
+background:#e4e4e4;
 }
 .violetbg1 {
-background:#5435af;
+background:#e4e4e4;
 }
 .blue-bg02 {
-background:#2c87ef;
+background:#e4e4e4;
 }
 .green-normal-bg {
-background:#009619;
+background:#e4e4e4;
 }
 /* Contribute Design*/
 .contribute-section-padding {
@@ -2263,6 +2293,26 @@ background:#009619;
 
 
 }
+.left-rail .bg-dark {
+    background-color: #e2e2e2!important;
+}
+.left-rail .navbar-dark .navbar-nav .nav-link {
+    color: #223563;
+    background: transparent;
+    border-radius: 0rem;
+}
+.left-rail .navbar-dark .navbar-nav .nav-link:before {
+    font-family: "FontAwesome";
+    content: "\f105";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    float: left;
+    font-size: 13px;
+        margin: 0px 10px 0px 15px;
+}
+}
 .left-rail .navbar-expand .navbar-nav {
 flex-direction: column;
 width: 100%;
@@ -2273,6 +2323,7 @@ width: 100%;
     }
 .left-rail .navbar {
     padding: .0rem 0rem;
+    z-index: 1;
   }
 .left-rail .navbar .nav-item {
     padding: .09rem .2rem;
@@ -2302,7 +2353,7 @@ width: 100%;
     margin:0px 0px 10px 0px;
 }
 .right-rail img{
-  height: 250px;
+  height: 150px;
   background-size: cover;
   width:100%;
 }
@@ -2347,7 +2398,7 @@ color:#064c76;
 }
 .navbar .dropdown-menu .nav-item {
           padding: 0px !important;
-        margin: 0px 0px -15px 0px !important;
+        margin: 0px 0px -23px 0px !important;
 }
 .navbar-dark .navbar-nav .nav-link:hover {
     color:#fff;
@@ -2372,6 +2423,9 @@ margin:0px 0px 0px 25px;
         font-size: 13px;
     margin: 0px 10px 0px 0px;
 }
+.nav-link{
+padding: .3rem 1rem;
+  }
 .navbar .dropdown-menu .nav-item .nav-link{
   border:none;
   background-color:transparent; !important;
@@ -2380,6 +2434,7 @@ margin:0px 0px 0px 25px;
   padding: 0px 0px;
   font-size: 13px;
   font-family: 'Roboto', sans-serif;
+      
 }
 .navbar .dropdown-menu .nav-item .nav-link:hover{ 
   color:#f0165f;
@@ -2390,7 +2445,7 @@ margin:0px 0px 0px 25px;
 
 }
 nav.bg-primary {
-    background-color: #164d78 !important;
+    background-color: #243665 !important;
 
 }
 .navbar-dark .navbar-nav .nav-link {
@@ -2432,7 +2487,7 @@ nav.bg-primary {
 
 /* remove the padding from the nav-item and add some margin to give some breathing room on hovers */
 .navbar .nav-item {
-      padding: .95rem .2rem;
+      padding: .75rem .2rem;
   margin:0 .10rem;
 
 }
@@ -2440,6 +2495,10 @@ nav.bg-primary {
 /* makes the dropdown full width  */
 .navbar .dropdown {position:static;}
 
+.navbar .dropdown img {
+  width:30px;
+  height:30px;
+}
 .navbar .dropdown-menu {
   width:100%;
   left:0;
@@ -2451,6 +2510,7 @@ nav.bg-primary {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.3s linear;
+  margin:-2px 0px 0px 0px;
   
 }
 
@@ -2515,10 +2575,48 @@ margin: 5px 0px;
 .dropdown-menu-sub {
   position: absolute;
   background-color:#f2f2f2;
-  width: 60%;
+  width: 100%;
   padding: 5px 10px;
-  right:0%;
-  position: absolute;
+  left:50%;
+  z-index: 555;
  /* bottom:0; */
  margin-top:-20px;
 }
+.dropdown-menu-sub .nav-item .nav-link {
+    border: none;
+    background-color: transparent;
+    !important: ;
+    border-radius: 0px;
+    color: #000;
+    padding: 0px 0px;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+        line-height: 15px;
+    padding: 15px 0px !important;
+}
+.navbar .dropdown-menu-sub  .nav-item:before {
+    font-family: "FontAwesome";
+    content: "\f105";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    float: left;
+    font-size: 13px;
+    margin: 10px 10px 0px 0px;
+}
+.dropdown-menu-sub-two {
+    position: absolute;
+  background-color:#eaeaea;
+  width: 100%;
+  padding: 5px 10px;
+  left:100%;
+
+ /* bottom:0; */
+ margin-top:-20px;
+}
+.social-iocns {
+  margin-top:20px;
+}
+
+/* ================= */

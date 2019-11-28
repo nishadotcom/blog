@@ -10,202 +10,75 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo base_url(); ?>">
-                        <i class="fa fa-home" aria-hidden="true"></i><span>Home</span>
-                    </a>
-                </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-cubes" aria-hidden="true"></i> <span>Contribute</span>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="<?php echo base_url(); ?>assets/img/boy-reading.png" class="img-fluid" alt="menu"><span>Menu</span>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
 
                         <div class="container">
                             <div class="row">
                                 <div class="col-md-3">
-                                    <span>Category 1</span>
+                                    <span>Commerce</span>
                                     <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
+
+
+                                        <li class="nav-item dropdown nav-sub-one">
+                                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Accounting</a>
+                                            <div class="dropdown-menu-sub" aria-labelledby="navbarDropdown">
+                                                <ul class="nav flex-column">
+
+                                                    <li class="nav-item dropdown nav-sub-two">
+                                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Basics of accounting
+                                                        </a>
+                                                        <div class="dropdown-menu-sub-two" aria-labelledby="navbarDropdown">
+                                                            <ul class="nav flex-column">
+                                                                <li class="nav-item ">
+                                                                    <a class="nav-link" href="<?php echo base_url().'blog/articles'; ?>">Balance sheet
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>                                                    
+                                                </ul>
+                                            </div>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="<?php echo base_url().'blog/articles'; ?>">Economics</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Link itemwe
+                                            <a class="nav-link" href="<?php echo base_url().'blog/articles'; ?>">Finance
                                             </a>
                                         </li>
                                     </ul>
                                 </div>
-                                <!-- /.col-md-4  -->
+                                
                                 <div class="col-md-3">
-                                    <span>Category 2</span>
+                                    <span>Arts</span>
                                     <ul class="nav flex-column">
                                         <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
+                                            <a class="nav-link active" href="<?php echo base_url().'blog/articles'; ?>">Literature</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="<?php echo base_url().'blog/articles'; ?>">Languages </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
+                                            <a class="nav-link" href="<?php echo base_url().'blog/articles'; ?>">History</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="<?php echo base_url().'blog/articles'; ?>">Fine Arts</a>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-cubes" aria-hidden="true"></i> <span>Services</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <span>Category 1</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.col-md-4  -->
-                                <div class="col-md-3">
-                                    <span>Category 2</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.col-md-4  -->
-                                <!-- /.col-md-4  -->
-                                <div class="col-md-3">
-                                    <span>Category 3</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.col-md-4  -->
-                                <!-- /.col-md-4  -->
-                                <div class="col-md-3">
-                                    <span>Category 4</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  /.container  -->
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-home" aria-hidden="true"></i> <span>Team</span>
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <span>Category 1</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.col-md-4  -->
-                                <div class="col-md-3">
-                                    <span>Category 2</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.col-md-4  -->
-                                <div class="col-md-3">
-                                    <span>Category 3</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.col-md-4  -->
-                                <div class="col-md-3">
-                                    <span>Category 4</span>
-                                    <ul class="nav flex-column">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" href="#">Active</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="#">Link item</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--  /.container  -->
                     </div>
                 </li>
             </ul>
             <li class="nav-item ml-auto" style="list-style: none;">
-                <button class="btn btn-primary pull-right contribute-btn" type="button" id="btn_contribute" data-toggle="modal" data-target="#modal_login">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <button class="btn btn-primary pull-right contribute-btn" type="button" onClick="window.open('<?php echo base_url().'article'; ?>', 'admin')">
+                    <img src="<?php echo base_url(); ?>assets/img/boy-writing.png" class="img-fluid" alt="menu">
                     Contribute
                 </button>
             </li>
